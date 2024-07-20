@@ -6,16 +6,16 @@ void calc() {
 	int myAr;
 	int targetAr;
 
+    // Get User input
 	printf("Insert Exp > ");
 	scanf("%d", &myExp);
-
 	printf("Insert AR > ");
 	scanf("%d", &myAr);
 	printf("Insert Target Ar > ");
 	scanf("%d", &targetAr);
 
 	int arTable[] = {
-		0,
+		0, // place holder for index 0
 		0,
 		350,
 		850,
@@ -82,17 +82,21 @@ void calc() {
 	int resinUseDaily = 200;
 	int expPer20Resin   = 100;
 
+    // Counts for Exp Gains
 	double resinExpPerDay = resinUseDaily / 20.0 * expPer20Resin;
 	int dailyCommsExp = 500 + (4 * 250);
 
+    // Counts for Days till AR x
 	double expGainPerDay = dailyCommsExp + resinExpPerDay;
 	int totalExpReq = arTable[targetAr] - arTable[myAr] - myExp;
 
+    // Prints Results
 	printf("\033[0;35mTotal Exp required: %d\033[0m\n", totalExpReq);
 	printf("\033[0;35mDays till goal AR: %.2f\033[0m\n", totalExpReq / expGainPerDay);
 }
+// Main function body
 int main() {
-	calc();
-	system("pause");
+	calc(); // Calls for the function above
+	system("pause"); // Halts so the terminal doesn't kill upon finish
 	return 0;
 }
