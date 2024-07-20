@@ -9,4 +9,4 @@
 - clone the repo
 - Review the Source Code
 - for Windows run `$ gcc .\arcalc.c -o "Ar Calculator.exe"`
-- for Linux run   `$ make arcalc`
+- for Linux run   `$ gcc arcalc.c -o "arcalc.o && chmod +x arcalc.o`
